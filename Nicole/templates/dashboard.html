@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking School Registration Dashboard</title>
+    <style>
+        body, html {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px;
+
+                    }
+        .registration-form, .dashboard {
+            width: 60%;
+            padding: 50px;
+            border: 10px solid lightpink;
+            border-radius: 20px;
+        }
+        label, input, select, button {
+            display: block;
+            width: 100%;
+            margin-top: 8px;
+        }
+        input, select, button {
+            padding: 20px;
+            margin-top: 2px;
+        }
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="registration-form">
+            <h2>Register for Cooking Classes</h2>
+            <form id="registerForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="course">Course:</label>
+                <select id="course" name="course">
+                    <option value="Italian Cooking">Italian Cooking</option>
+                    <option value="French Pastries">French Pastries</option>
+                    <option value="Japanese Cuisine">Japanese Cuisine</option>
+                </select>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+        <div class="dashboard">
+            <h2>Registrations</h2>
+            <div id="registrationsList"></div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const course = document.getElementById('course').value;
+
+            const registrationList = document.getElementById('registrationsList');
+            const entry = document.createElement('div');
+            entry.classList.add('registration-entry');
+            entry.textContent = `Name: ${name}, Email: ${email}, Course: ${course}`;
+            registrationList.appendChild(entry);
+
+            // Clear form
+            document.getElementById('registerForm').reset();
+        });
+    </script>
+</body>
+</html>

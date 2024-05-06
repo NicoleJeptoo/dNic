@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,3 +10,71 @@
 
 </body>
 </html>
+<!-- courses/templates/courses/course_info.html -->
+{% load static %}
+{%block content  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .row {
+            display: flex;
+            justify-content: center;
+        }
+        .course {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .course img {
+            width: 200px;
+            height: 6cm;
+        }
+        .course p {
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Courses Overview</h1>
+    <div class="pyramid">
+        <div class="row">
+            <div class="course">
+                 <h1 style="background-color: paleturquoise;text-decoration-thickness: from-font;"> HOSPITALITY</h1>
+                <img src="{% static 'images/hos.jpeg' %}" alt="Hospitality">
+              <p> - Learn the essentials of hospitality management including customer service and hotel operations.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="course">
+                <h2 style="background-color:sandybrown;text-decoration-thickness: from-font;"> BAR TENDING </h2>
+                <img src="{% static 'images/bar.jpeg' %}" alt="Bar Tending">
+               <p> - Master the art of mixology, understand bar equipment, and explore various cocktail recipes.</p>
+            </div>
+            <div class="course">
+                <img src="{% static 'images/rec.jpeg' %}" alt="Recipe Making">
+                <p>Recipe Making - Focus on creating and documenting recipes, understanding flavor profiles, and recipe testing.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="course">
+                <img src="{% static 'images/bak.jpeg' %}" alt="Baking">
+                <p>Baking - Dive into the world of baking, covering breads, pastries, and other baked goods.</p>
+            </div>
+            <div class="course">
+                <img src="{% static 'images/cooook.jpeg' %}" alt="Cooking">
+                <p>Cooking - Comprehensive course on cooking techniques, ingredients, and international cuisines.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock  %}
